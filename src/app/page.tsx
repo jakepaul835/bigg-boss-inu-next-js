@@ -18,7 +18,6 @@ import { WalletContextProvider } from "@/web3/components/Wallet";
 export default function Home() {
   return (
     <>
-    
       <WalletContextProvider>
         <Header />
         <Banner/>      

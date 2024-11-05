@@ -7,7 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Image from 'next/image';
 import logoimg from '../../public/logo.png';
-import { UnlockButtonBootstrap } from '@/web3/components/Wallet';
+import { UnlockButton } from './UnlockButton';
 import { useAccount } from 'wagmi';
 
 export default function Header() {
@@ -51,8 +51,8 @@ export default function Header() {
                 <Nav.Link className='mx-3' href="#roadmap">Roadmap</Nav.Link>
                 { account ? 
                 <Button href="/link" variant="primary">Buy Now</Button>
-                : <></>}
-                <UnlockButtonBootstrap ShowConnected ShowNotConnected />
+                : <UnlockButton/>}
+                
               </Nav>
             </Navbar.Collapse>
           </Container>
