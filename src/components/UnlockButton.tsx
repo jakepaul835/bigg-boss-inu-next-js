@@ -76,13 +76,19 @@ export const UnlockButton = (props : any) => {
                       </div>
                     )}
                     {chain.name}
-                  </Button> */}
+                  </Button> 
                   <Button variant="primary" onClick={openAccountModal} type="button" {...props}>
                     {account.displayName}
-                    {/** account.displayBalance
+                     account.displayBalance
                       ? ` (${account.displayBalance})`
-                      : '' **/}
-                  </Button>
+                      : '' *
+                  </Button>*/}
+                  <ConnectButton
+                    accountStatus={{
+                      smallScreen: 'avatar',
+                      largeScreen: 'full',
+                    }}
+                  />
                 </div>
               );
             })()}

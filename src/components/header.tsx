@@ -49,9 +49,7 @@ export default function Header() {
                 <Nav.Link className='mx-3' href="#howtobuy">How to Buy</Nav.Link>
                 <Nav.Link className='mx-3' href="#tokenomics">Tokenomics</Nav.Link>
                 <Nav.Link className='mx-3' href="#roadmap">Roadmap</Nav.Link>
-                { account ? 
-                <Button href="/link" variant="primary">Buy Now</Button>
-                : <UnlockButton/>}
+                <UnlockButton/>
                 
               </Nav>
             </Navbar.Collapse>
