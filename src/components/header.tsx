@@ -7,6 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Image from 'next/image';
 import logoimg from '../../public/logo.png';
+import { UnlockButtonBootstrap } from '@/web3/components/Wallet';
 
 export default function Header() {
   useEffect(() => {
@@ -45,6 +46,7 @@ export default function Header() {
                 <Nav.Link className='mx-3' href="#tokenomics">Tokenomics</Nav.Link>
                 <Nav.Link className='mx-3' href="#roadmap">Roadmap</Nav.Link>
                 <Button href="/link" variant="primary">Buy Now</Button>
+                <UnlockButtonBootstrap ShowConnected ShowNotConnected />
               </Nav>
             </Navbar.Collapse>
           </Container>

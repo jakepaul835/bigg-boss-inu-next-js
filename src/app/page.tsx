@@ -11,22 +11,26 @@ import Marque from "@/components/Marque";
 import Roadmap from "@/components/roadmap";
 import Footer from "@/components/footer";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { WalletContextProvider } from "@/web3/components/Wallet";
 
 
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <Banner/>      
-      <LogoListing/>
-      <Table/>      
-      <About/>      
-      <HowToBuy/>   
-      <ContactAddress/>   
-      <Marque/>
-      <Roadmap/>
-      <Footer/>
+    
+      <WalletContextProvider>
+        <Header />
+        <Banner/>      
+        <LogoListing/>
+        <Table/>      
+        <About/>      
+        <HowToBuy/>   
+        <ContactAddress/>   
+        <Marque/>
+        <Roadmap/>
+        <Footer/>
+      </WalletContextProvider>
     </>
   );
 }
