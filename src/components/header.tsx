@@ -9,6 +9,8 @@ import Image from 'next/image';
 import logoimg from '../../public/logo.png';
 import { UnlockButton } from './UnlockButton';
 import { useAccount } from 'wagmi';
+import { useFetchPublicData, useFetchUserData } from '@/web3/state';
+import { PresaleJohan } from '@/web3/state/types';
 
 export default function Header() {
   useEffect(() => {
@@ -32,6 +34,12 @@ export default function Header() {
 
   
   const account = useAccount().address?.toString()
+
+  
+  useFetchPublicData(account, "presaleJohan")
+  const presaleJohan = useFetchUserData<PresaleJohan>(account, "presaleJohan")
+  console.log("HEADER")
+  console.log(presaleJohan)
 
   return (
     <>

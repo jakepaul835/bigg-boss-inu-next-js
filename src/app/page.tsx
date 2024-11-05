@@ -12,6 +12,9 @@ import Roadmap from "@/components/roadmap";
 import Footer from "@/components/footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { WalletContextProvider } from "@/web3/components/Wallet";
+import { RefreshContextProvider } from "@/web3/components/RefreshContext";
+import { store } from "@/web3/state";
+import { Provider } from "react-redux";
 
 
 
@@ -19,17 +22,21 @@ export default function Home() {
   return (
     <>
       <WalletContextProvider>
-        <Header />
-        <Banner/>      
-        <LogoListing/>
-        <Table/>      
-        <About/>      
-        <HowToBuy/>   
-        <ContactAddress/>   
-        <Marque/>
-        <Roadmap/>
-        <Footer/>
-      </WalletContextProvider>
+      <RefreshContextProvider>
+        <Provider store={store}>
+          <Header />
+          <Banner/>      
+          <LogoListing/>
+          <Table/>      
+          <About/>      
+          <HowToBuy/>   
+          <ContactAddress/>   
+          <Marque/>
+          <Roadmap/>
+          <Footer/>
+        </Provider>
+        </RefreshContextProvider>
+        </WalletContextProvider>
     </>
   );
 }
