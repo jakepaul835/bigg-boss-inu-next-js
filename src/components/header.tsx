@@ -8,6 +8,7 @@ import Button from 'react-bootstrap/Button';
 import Image from 'next/image';
 import logoimg from '../../public/logo.png';
 import { UnlockButtonBootstrap } from '@/web3/components/Wallet';
+import { useAccount } from 'wagmi';
 
 export default function Header() {
   useEffect(() => {
@@ -29,6 +30,9 @@ export default function Header() {
     };
   }, []);
 
+  
+  const account = useAccount().address?.toString()
+
   return (
     <>
       <header className='main-header'>
@@ -45,7 +49,9 @@ export default function Header() {
                 <Nav.Link className='mx-3' href="#howtobuy">How to Buy</Nav.Link>
                 <Nav.Link className='mx-3' href="#tokenomics">Tokenomics</Nav.Link>
                 <Nav.Link className='mx-3' href="#roadmap">Roadmap</Nav.Link>
+                { account ? 
                 <Button href="/link" variant="primary">Buy Now</Button>
+                : <></>}
                 <UnlockButtonBootstrap ShowConnected ShowNotConnected />
               </Nav>
             </Navbar.Collapse>
