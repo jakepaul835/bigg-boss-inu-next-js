@@ -40,6 +40,7 @@ const fetchPresaleJohanData = async () => {
     return {
       cost: _stages[index][0].toString(), // Extract the ID from the args array
       amount: _stages[index][1].toString(),
+      max: _stages[index][1].toString(),
     };
   });
 
