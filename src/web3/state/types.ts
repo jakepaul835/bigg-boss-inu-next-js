@@ -20,22 +20,33 @@ export interface Block {
 
 export interface PresaleJohan {
   stageIterator : number,
-  totelTokensSold?: BigNumber,
-  totalSoldInUSD?: BigNumber,
+  totelTokensSold?: number,
+  totalSoldInUSD?: number,
   paused: boolean,
-  stages?: {
+  stageCurrent?: {
     cost: BigNumber,
     amount: BigNumber,
     max: BigNumber
-  }
+  },
+  stageProgress: number,
+  ethPrice: number,
+  tokenPrice: number,
+  tokensPerDollar: number,
+  tokensPerEth: number
+  /* stages?: {
+    cost: BigNumber,
+    amount: BigNumber,
+    max: BigNumber
+  } */
   userData?: {
     balance: BigNumber
   }
 }
-
 
 // Global state
 export interface State {
   block: Block
   presale: PresaleJohan
 }
+
+

@@ -19,3 +19,6 @@ export const getWbnbAddress = () => {
 export const getPresaleJohanAddress = () => {
   return getAddress(addresses.presaleJohan)
 }
+export const getEthPriceFeedAddress = () => {
+  return getAddress(addresses.ethPriceFeed)
+}

@@ -13,4 +13,10 @@ export default {
     56: `0x${''}`,
     97: `0x${''}`,
   } as Address,
+  ethPriceFeed: {
+    1: `0x${'5f4eC3Df9cbd43714FE2740f5E3616155c5b8419'}`,
+    5: `0x${''}`,
+    56: `0x${''}`,
+    97: `0x${''}`,
+  } as Address
 }
