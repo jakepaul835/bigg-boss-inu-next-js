@@ -1,0 +1,1 @@
+remixd -s D:\Blockchain\bigg-boss-inu-next-js\contracts --remix-ide https://remix.ethereum.org
