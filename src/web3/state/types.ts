@@ -20,7 +20,7 @@ export interface Block {
 
 export interface PresaleJohan {
   stageIterator : number,
-  totelTokensSold?: number,
+  totalTokenSold?: number,
   totalSoldInUSD?: number,
   paused: boolean,
   stageCurrent?: {

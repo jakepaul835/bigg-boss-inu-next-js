@@ -8,7 +8,7 @@ export default {
     97: `0x${'67ADCB4dF3931b0C5Da724058ADC2174a9844412'}`,
   } as Address,
   presaleJohan: {
-    1: `0x${'964d05383433cAF3705E0Fc934B1Ff8058c96Bf5'}`,
+    1: `0x${'46613F37E4660b2e05e2b245bb5406130482D1C1'}`,
     5: `0x${''}`,
     56: `0x${''}`,
     97: `0x${''}`,
