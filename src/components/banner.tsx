@@ -1,15 +1,13 @@
 "use client"
 
 import 'aos/dist/aos.css';
-import twittericon from "../../public/twitter.png";
-import telegramicon from "../../public/telegram.png";
-import Bannertitle from "../../public/banner-title.png";
-import BannerLeftImg from "../../public/banner-left-img.png";
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import axios from 'axios';
+import { useAccount } from 'wagmi';
+import { useFetchPublicData, useFetchUserData } from '@/web3/state';
+import { PresaleJohan } from '@/web3/state/types';
 
 
     // Define a TypeScript interface for presale data structure
@@ -36,6 +34,10 @@ export default function Banner() {
     const [presaleData, setPresaleData] = useState<PresaleData | null>(null);
     const [loading, setLoading] = useState(true);
    
+    
+    const account = useAccount().address?.toString()  
+    useFetchPublicData(account, "presaleJohan")
+    const presaleJohan = useFetchUserData<PresaleJohan>(account, "presaleJohan")
       
    
        useEffect(() => {
@@ -65,22 +67,22 @@ export default function Banner() {
                 <div className="row">
                     <div className="col-lg-5">
                         <div className='banner-left-img'>
-                            <Image src={BannerLeftImg} alt="vcv" className='vert-move' />
+                            <img src="banner-left-img.png" alt="vcv" className='vert-move' />
                         </div>
                     </div>
                     <div className="col-lg-7 banner-calculation">
                         <div className='banner-title-img'>
-                            <Image src={Bannertitle} alt="xcvxc" />
+                            <img src="banner-title.png" alt="xcvxc" />
                         </div>
                         <div className="d-sm-flex justify-content-center">
                             <div className="ms-lg-4 mb-sm-0 mb-4 d-flex align-items-center flex-column">
                                 <div className='social-icons'>
                                     <a href="/" className="mb-2 d-inline-block">
-                                        <Image src={twittericon} alt="" />
+                                        <img src="telegram.png" alt="" />
                                     </a>
                                     <br />
                                     <a href="/" className="mb-2 d-inline-block">
-                                        <Image src={telegramicon} alt="Telegram" />
+                                        <img src="telegram.png" alt="Telegram" />
                                     </a>
                                 </div>
                                 <p className="mb-2 d-inline-block follow-us">

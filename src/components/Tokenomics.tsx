@@ -1,6 +1,4 @@
 import React from 'react'
-import tokenomicsheading from "../images/tokenomics-heading.png";
-import tokenomicsgraph from "../images/tokenomics-graph.png";
 
 export default function Tokenomics() {
     return (
@@ -10,7 +8,7 @@ export default function Tokenomics() {
                     <div className="row">
                         <div className="col-lg-6 mb-lg-0 mb-5">
                             <div className="tokenomics-left-content">
-                                <img src={tokenomicsheading} alt="" className="vert-move" />
+                                <img src="tokenomics-heading.png" alt="" className="vert-move" />
                                 <ul>
                                     <li data-aos="fade-up">
                                         <div className="tokenomic-box bg-purple">
@@ -47,7 +45,7 @@ export default function Tokenomics() {
                         </div>
                         <div className="col-lg-6">
                             <div className="tokenomics-content-right text-center">
-                                <img src={tokenomicsgraph} alt="vdfvf"/>
+                                <img src="tokenomics-graph.png" alt="vdfvf"/>
                                 <h3 className="text-white mt-4 mb-4">
                                     TOKEN SUPPLY : 1,000,000,000 $PEME
                                 </h3>

@@ -1,7 +1,5 @@
 import React from "react";
-import abouttextimg from "../../public/about-text-img.png";
-import aboutrightimg from "../../public/about-img-right.png";
-import Image from "next/image";
+
 export default function About() {
   return (
     <>
@@ -10,7 +8,7 @@ export default function About() {
           <div className="row align-items-center">
             <div className="col-lg-6">
               <div className="about-content text-center">
-                <Image src={abouttextimg} alt="" className="vert-move" />
+                <img src="bout-text-img.png" alt="" className="vert-move" />
                 <p>
                   BIG BOSS INU IS THE NEXT BIG THING IN CRYPTO-READY TO TAKE
                   OVER THE ENTIRE MEME AND CRYPTO WORLD. WE'RE HERE TO LEAD,
@@ -25,7 +23,7 @@ export default function About() {
               </div>
             </div>
             <div className="col-lg-6">
-              <Image src={aboutrightimg} alt="" className="vert-move" />
+              <img src="about-img-right.png" alt="" className="vert-move" />
             </div>
           </div>
         </div>

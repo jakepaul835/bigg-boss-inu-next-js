@@ -1,11 +1,4 @@
 "use client"
-import roadmapheading from "../../public/roadmap-heading.png";
-import roadmapimg from "../../public/roadmap-img.png";
-import roadmapicon1 from "../../public/roadmap-heading-icon1.png"
-import roadmapicon2 from "../../public/roadmap-heading-icon2.png"
-import roadmapicon3 from "../../public/roadmap-heading-icon3.png"
-import roadmapicon4 from "../../public/roadmap-heading-icon4.png"
-import Image from "next/image";
 export default function Roadmap() {
     return (
         <>
@@ -13,7 +6,7 @@ export default function Roadmap() {
                 <div className="container-fluid">
                     <div className="row mb-5">
                         <div className="col-12 text-center">
-                            <Image src={roadmapheading} alt="" className="vert-move" />
+                            <img src="roadmap-heading.png" alt="" className="vert-move" />
                         </div>
                     </div>
                     <div className="row">
@@ -23,7 +16,7 @@ export default function Roadmap() {
                                     <h3>Establishing the Boss</h3>
                                 </div>
                                 <div className='icon-img'>
-                                    <Image src={roadmapicon1} alt="efsf" />
+                                    <img src="roadmap-heading-icon1.png" alt="efsf" />
                                 </div>
                                 <div>
                                     <ul className='roadmap-data-list list'>
@@ -40,7 +33,7 @@ export default function Roadmap() {
                                     <h3>Spreading the Influence</h3>
                                 </div>
                                 <div className='icon-img'>
-                                    <Image src={roadmapicon2} alt="efsf" />
+                                    <img src="roadmap-heading-icon2.png" alt="efsf" />
                                 </div>
                                 <div>
                                     <ul className='roadmap-data-list list'>
@@ -58,7 +51,7 @@ export default function Roadmap() {
                                     <h3>Making Crypto Mainstream</h3>
                                 </div>
                                 <div className='icon-img'>
-                                    <Image src={roadmapicon3} alt="efsf" />
+                                    <img src="roadmap-heading-icon3.png" alt="efsf" />
                                 </div>
                                 <div>
                                     <ul className='roadmap-data-list list'>
@@ -76,7 +69,7 @@ export default function Roadmap() {
                                     <h3>Becoming the Meme King</h3>
                                 </div>
                                 <div className='icon-img'>
-                                    <Image src={roadmapicon4} alt="efsf" />
+                                    <img src="roadmap-heading-icon4.png" alt="efsf" />
                                 </div>
                                 <div>
                                     <ul className='roadmap-data-list list'>
@@ -91,7 +84,7 @@ export default function Roadmap() {
                     </div>
                 </div>
                 <div className='text-center'>
-                    <Image src={roadmapimg} alt="" className='w-100' />
+                    <img src="roadmap-img.png" alt="" className='w-100' />
                 </div>
             </section>
 

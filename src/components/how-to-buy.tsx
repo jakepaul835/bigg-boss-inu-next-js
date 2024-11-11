@@ -1,10 +1,4 @@
 "use client"
-import howtobuynumber1 from "../../public/howtobuy1.png";
-import howtobuynumber3 from "../../public/howtobuy3.png";
-import howtobuynumber2 from "../../public/howtobuy2.png";
-import howtobuynumber4 from "../../public/howtobuy4.png";
-import howtobuymain from "../../public/howtobuy-main-img.png";
-import Image from "next/image";
 
 export default function HowToBuy() {
     return (
@@ -13,11 +7,11 @@ export default function HowToBuy() {
                 <div className="container">
                     <div className="row justify-content-between row-gap-5 position-relative">
                         <div className='col-lg-12 d-lg-none d-block'>
-                            <Image src={howtobuymain} alt=""/>
+                            <img src="howtobuy-main-img.png" alt=""/>
                         </div>
                         <div className="col-lg-6">
                             <div className="how-tobuy-bg how-tobuy-bg1">
-                                <Image src={howtobuynumber1} alt="" />
+                                <img src="howtobuy1.png" alt="" />
                                 <div className='htb-heading'>
                                     <h3>CREATE WALLET</h3>
                                 </div>
@@ -26,7 +20,7 @@ export default function HowToBuy() {
                         </div>
                         <div className="col-lg-6 order-for-mobile-3">
                             <div className="how-tobuy-bg how-tobuy-bg3">
-                                <Image src={howtobuynumber3} alt="" />
+                                <img src="howtobuy3.png" alt="" />
                                 <div className='htb-heading'>
                                     <h3>GO TO UNISWAP</h3>
                                 </div>
@@ -36,7 +30,7 @@ export default function HowToBuy() {
                         </div>
                         <div className="col-lg-5">
                             <div className="how-tobuy-bg how-tobuy-bg2">
-                                <Image src={howtobuynumber2} alt="" />
+                                <img src="howtobuy2.png" alt="" />
                                 <div className='htb-heading'>
                                     <h3>GET SOME ETH</h3>
                                 </div>
@@ -47,7 +41,7 @@ export default function HowToBuy() {
                         </div>
                         <div className="col-lg-5 order-for-mobile-4">
                             <div className="how-tobuy-bg how-tobuy-bg4">
-                                <Image src={howtobuynumber4} alt="" />
+                                <img src="howtobuy4.png" alt="" />
                                 <div className='htb-heading'>
                                     <h3>SWAP TO $bigboss</h3>
                                 </div>
@@ -57,7 +51,7 @@ export default function HowToBuy() {
                             </div>
                         </div>
                         <div className='col-lg-12 d-lg-block d-none'>
-                            <Image src={howtobuymain} alt="" className='howtobuy-main'/>
+                            <img src="howtobuy-main-img.png" alt="" className='howtobuy-main'/>
                         </div>
                     </div>
                 </div>

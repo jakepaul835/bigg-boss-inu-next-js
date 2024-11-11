@@ -33,13 +33,9 @@ export default function Header() {
   }, []);
 
   
-  const account = useAccount().address?.toString()
-
-  
+  const account = useAccount().address?.toString()  
   useFetchPublicData(account, "presaleJohan")
   const presaleJohan = useFetchUserData<PresaleJohan>(account, "presaleJohan")
-  console.log("HEADER")
-  console.log(presaleJohan)
 
   return (
     <>
@@ -47,7 +43,7 @@ export default function Header() {
         <Navbar expand="lg">
           <Container>
             <Navbar.Brand href="/home" className='d-lg-none d-block'>
-              <Image src={logoimg} alt="Logo" />
+              <img src="logo.png" alt="" />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">

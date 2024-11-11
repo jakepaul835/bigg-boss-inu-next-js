@@ -13,7 +13,7 @@ export default function Footer() {
                         <div className="col-lg-7 mb-lg-0 mb-4">
                             <div className="footer-icons d-md-flex align-items-center justify-content-between">
                                 <a href="/" className='footer-logo'>
-                                    <Image src={footerlogo} alt="" className='mb-md-0 mb-4' />
+                                    <img src="footer-logo.png" alt="" className='mb-md-0 mb-4' />
                                 </a>
                                 <ul className='d-flex align-items-center justify-content-center flex-column'>
                                     <div className='footer-follow-us'>
@@ -21,10 +21,10 @@ export default function Footer() {
                                     </div>
                                     <div className='d-flex align-items-center justify-content-center social-icons'>
                                         <li>
-                                            <a href="/" className='d-inline-block'><Image src={twittericon} alt="" /></a>
+                                            <a href="/" className='d-inline-block'><img src="twitter.png" alt="" /></a>
                                         </li>
                                         <li>
-                                            <a href="/" className='d-inline-block'><Image src={telegramicon} alt="" /></a>
+                                            <a href="/" className='d-inline-block'><img src="telegram.png" alt="" /></a>
                                         </li>
                                     </div>
                                 </ul>
