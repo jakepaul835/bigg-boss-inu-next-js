@@ -119,7 +119,6 @@ export const useFetchPublicData = (account: string | undefined, ...contractNames
         const dynamicImport = moduleRegistry[contractName];
         if (dynamicImport) {
           const { fetchPublicDataAsync: dynamicFetchPublicDataAsync } = await dynamicImport();
-          console.log("Public Update")
           dispatch(dynamicFetchPublicDataAsync());
         } else {
           console.error(`Contract ${contractName} not found.`);
@@ -147,7 +146,6 @@ export const useFetchUserData = <T>(account: string | undefined, contractName: k
       const dynamicImport = moduleRegistry[contractName];
       if (dynamicImport) {
         const { fetchUserDataAsync: dynamicFetchUserDataAsync } = await dynamicImport();
-        console.log("User Update");
         dispatch(dynamicFetchUserDataAsync(account));
       } else {
         console.error(`Contract ${contractName} not found.`);

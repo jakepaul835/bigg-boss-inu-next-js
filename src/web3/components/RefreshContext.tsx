@@ -20,7 +20,6 @@ const RefreshContextProvider = ({ children } : {children : React.ReactNode}) => 
   }, [])
 
   useEffect(() => {
-    console.log(SLOW_INTERVAL)
     const interval = setInterval(async () => {
       setSlow((prev) => prev + 1)
     }, SLOW_INTERVAL)

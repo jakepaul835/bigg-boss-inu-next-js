@@ -17,20 +17,20 @@ import { useDepositCoin } from '@/web3/hooks/usePresale';
     // Define a TypeScript interface for presale data structure
     interface PresaleData {
         PEPEMEMECOIN?: string;
-        PRESALE?: string;
-        PEME?: string;
-        TOTALBONUS?: string;
-        PEMEEQUAL?: string;
-        VESTINGBONUS?: string;
+        // PRESALE?: string;
+        // PEME?: string;
+        // TOTALBONUS?: string;
+        // PEMEEQUAL?: string;
+        // VESTINGBONUS?: string;
         TEXTBOXVAL?: number;
         UPTO?: string;
         percentage?: string;
-        STAGEBONUSVAL?: string;
-        BUYINGBONUSVAL?: string;
-        BUYINGBONUS?: string;
-        PEMERAISED?: string;
-        PEMERAISEDVAL?: string;
-        LOADERPERCENTAGE?: string;
+        // STAGEBONUSVAL?: string;
+        // BUYINGBONUSVAL?: string;
+        // BUYINGBONUS?: string;
+        // PEMERAISED?: string;
+        // PEMERAISEDVAL?: string;
+        // LOADERPERCENTAGE?: string;
     }
 
 
@@ -58,19 +58,51 @@ export default function Banner() {
         fetchPresaleData();
     }, []);
 
-
-      
+    
   const account = useAccount().address?.toString()  
   const presaleJohan = useFetchUserData<PresaleJohan>(account, "presaleJohan")
-  console.log("WEB 3 DATA")
-  console.log(presaleJohan)
+  // console.log("WEB 3 DATA")
+  // console.log(presaleJohan)
+
+  const timestampUnix = 1731351889000
+  const timestampOffset = 60 * 60 * 1000;
+  const percentageOffset = 1.0
+  const unix = Date.now()
+  // console.log(unix)
+
+  const offsetIndex = Math.floor((unix - timestampUnix) / timestampOffset)
+  // console.log(offsetIndex)
+      
 
   let progress = 0.0
+  let raised = 0.0;
   if (presaleData && presaleJohan) {
-    progress = Math.round((presaleData?.TEXTBOXVAL ?? 0.0 + presaleJohan?.stageProgress ?? 0.0) * 100.0) / 100.0
-    if (progress >= 99.0)
-        progress = 99.0
+    const contractProgress = presaleJohan?.stageProgress ?? 0.0
+    const maxStageTokens = Number(presaleJohan?.stageCurrent?.max ?? 0.0); // Max tokens for the current stage
+    const tokenPrice = presaleJohan.tokenPrice; // USD value per token (current stage)
+
+    // Calculate the raw progress, including multiple cycles, offset by the initial stage
+    const cycleProgress = percentageOffset * offsetIndex + contractProgress;
+
+    // Ensure that the progress wraps between contractProgress and 100
+    if (cycleProgress >= 100) { 
+        // Modulo to get the remainder within the cycle range, plus contractProgress to restart from the offset
+        progress = ((cycleProgress - contractProgress) % (100 - contractProgress)) + contractProgress;
+    } else {
+        progress = cycleProgress;
+    }
+
+    // Round progress to two decimal places for display
+    progress = Math.round(progress * 100.0) / 100.0;
+    
+    // Calculate USD earned within the current cycle only
+    const cycleTokens = ((progress - contractProgress) / 100) * maxStageTokens;
+    const cycleUSD = cycleTokens * tokenPrice;
+    // Total USD raised combines contractUSD from all previous stages and current cycleUSD
+    const contractUSD = Number(presaleJohan.totalSoldInUSD);
+    raised = Math.round(cycleUSD + contractUSD);
   }
+
 
   const TokensPerEth = presaleJohan?.tokensPerEth ?? 0.0
   // const tokensPerDollar = presaleJohan?.tokensPerDollar ?? 0.0
@@ -78,22 +110,45 @@ export default function Banner() {
   const [ethValue, setEthValue] = useState("");
   const [tokenAmount, setTokenAmount] = useState("");
 
-  // Update right input (PEMERAISED) when the left input (BUYINGBONUSVAL) changes
   const handleEthInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = e.target.value;
+    let newValue = e.target.value;
+
+    // Check if the input value is a valid number (allow empty input or 0)
+    if (isNaN(parseFloat(newValue)) || parseFloat(newValue) === 0) {
+        setEthValue(newValue);  // Allow empty or 0 input to reset
+        setTokenAmount('');
+        return;
+    }
+
+    // Limit the precision to 8 decimal places if more than 8 decimals are present
+    if (newValue.includes('.') && newValue.split('.')[1].length > 8) {
+        newValue = (parseFloat(newValue) + 1e-8).toFixed(8); // Limit the decimal places to 8
+    } else {
+        // If it's a valid input with precision <= 8 decimals, format the value to 8 decimals
+        newValue = (Math.ceil(Number(newValue) * 1e8) / 1e8).toString();
+        
+        // If the value is in scientific notation, convert it to normal decimal format
+        if (newValue.includes("e")) {
+            newValue = Number(newValue).toFixed(8); // Force it into standard decimal format
+        }
+    }
+
+    // Set the formatted ETH value
     setEthValue(newValue);
-    if (Number(newValue) > 0)
-        setTokenAmount(Math.round((Number(newValue)) * TokensPerEth).toString()); // Update right input based on factor `x`
-    else
-        setTokenAmount("")
+
+    // Calculate the corresponding token amount
+    const calculatedTokenAmount = Math.floor(Number(newValue) * TokensPerEth); // Assuming TokensPerEth is defined
+    setTokenAmount(calculatedTokenAmount.toString());
   };
 
   // Update left input when the right input changes, if needed
   const handleTokenInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = e.target.value;
-    setTokenAmount(newValue);
-    if (Number(newValue) > 0)
-        setEthValue(Math.round((Number(newValue)) / TokensPerEth).toString()); // Update left input based on factor `x`
+    const newValue = Math.floor(Number(e.target.value));
+    setTokenAmount(newValue.toString());
+    if (Number(newValue) > 0) {
+        const ethValueMax = Math.ceil((Number(newValue) / TokensPerEth) * 1e8) / 1e8;
+        setEthValue(ethValueMax.toFixed(8)); 
+    }
     else
         setEthValue("")
   };
@@ -102,13 +157,10 @@ export default function Banner() {
 
   // Action function for the button
   const handleButtonClick = async () => {
-    console.log('Action with value:', ethValue);
     // Call an API or perform other actions with ethValue here
-    console.log("BEFORE")
     setPending(true)
-    var tx = await onDepositCoin(ethValue)
+    const tx = await onDepositCoin(ethValue)
     setPending(false)
-    console.log("AFTER")
     console.log(tx)
   };
 
@@ -144,7 +196,7 @@ export default function Banner() {
                             <div className="banner-calc">
                                 <div className='bigboss-presale'>
                                     <div className="banner-calc-inner">
-                                        <h3>{presaleData?.PEPEMEMECOIN}</h3>
+                                        <h3>BUY $BIG BOSS INU NOW!</h3>
                                         <ul>
                                             <li>
                                                 <p>Current Price</p>
@@ -156,7 +208,7 @@ export default function Banner() {
                                             </li>
                                         </ul>
                                         <p className="amount-raised">Total Amount Raised :</p>
-                                        <h3 className="amount-text text-start">${presaleJohan ? presaleJohan?.totalSoldInUSD : 0.0}</h3>
+                                        <h3 className="amount-text text-start">${raised}</h3>
                                         <div className="progress">
                                         <div 
                                             style={{ width: `${progress}%` }} 
@@ -181,7 +233,7 @@ export default function Banner() {
                                         <div className="pay-box">
                                             <div className="paybox-inner">
                                                 <h5 className="text-start">
-                                                You Pay <span>{presaleData?.STAGEBONUSVAL}</span>
+                                                You Pay <span>ETH</span>
                                                 </h5>
                                                 <div className="d-flex align-items-center paybox-box">
                                                 <img src="../calc-icon.png" alt="icon" />
@@ -199,7 +251,7 @@ export default function Banner() {
                                             </div>
                                             <div className="paybox-inner">
                                                 <h5 className="text-start">
-                                                You Receive <span className="bigboss">{presaleData?.BUYINGBONUS}</span>
+                                                You Receive <span className="bigboss">BIG BOSS INU</span>
                                                 </h5>
                                                 <div className="d-flex align-items-center paybox-box">
                                                 <img src="../calc-icon2.png" alt="icon" />
@@ -217,7 +269,7 @@ export default function Banner() {
                                             </div>
                                         </div>
                                         <div className="banner-calc-btn mb-0">
-                                            <button disabled={Number(ethValue) <= 0 || pending} onClick={handleButtonClick} className="btn btn-primary d-block">
+                                            <button disabled={Number(ethValue) < 0.00000001 || pending} onClick={handleButtonClick} className="btn btn-primary d-block">
                                                 BUY $BIG BOSS INU
                                             </button>
                                         </div>
