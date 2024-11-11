@@ -5,9 +5,9 @@ import { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import axios from 'axios';
-import { useAccount } from 'wagmi';
-import { useFetchPublicData, useFetchUserData } from '@/web3/state';
-import { PresaleJohan } from '@/web3/state/types';
+// import { useAccount } from 'wagmi';
+// import { useFetchPublicData, useFetchUserData } from '@/web3/state';
+// import { PresaleJohan } from '@/web3/state/types';
 
 
     // Define a TypeScript interface for presale data structure

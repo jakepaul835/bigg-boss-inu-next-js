@@ -1,6 +1,6 @@
 "use client"
 import "@/styles/app.css"
-import React, { useEffect } from "react";
+import React from "react";
 import Header from "@/components/header";
 import Banner from "@/components/banner";
 import LogoListing from "@/components/logo-listing";
