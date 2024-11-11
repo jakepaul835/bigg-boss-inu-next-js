@@ -1,4 +1,5 @@
 "use client"
+import "@/styles/app.css"
 import React, { useEffect } from "react";
 import Header from "@/components/header";
 import Banner from "@/components/banner";
@@ -15,7 +16,6 @@ import { WalletContextProvider } from "@/web3/components/Wallet";
 import { RefreshContextProvider } from "@/web3/components/RefreshContext";
 import { store } from "@/web3/state";
 import { Provider } from "react-redux";
-import "@/styles/app.css"
 
 
 
