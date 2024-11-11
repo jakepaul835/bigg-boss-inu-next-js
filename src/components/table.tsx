@@ -1,12 +1,5 @@
 "use client"
-import chosenoneimg from "../../public/chosenone.png";
-import bigbossicon from "../../public/bigboss-icon.png";
-import dogeicon from "../../public/dogeicon.png";
-import shibaicon from "../../public/shibainu.png";
-import pepeicon from "../../public/pepeicon.png";
-import sparkleicon from "../../public/sparkle.png";
-import crossicon from "../../public/cross.png"
-import Image from "next/image";
+
 
 export default function Table() {
     return (
@@ -15,7 +8,7 @@ export default function Table() {
                 <div className="row">
                     <div className="col-12 mb-5">
                         <div className="text-center">
-                            <Image src={chosenoneimg} alt="" className="vert-move" />
+                            <img src="chosenone.png" alt="" className="vert-move" />
                         </div>
                     </div>
                     <div className="col-lg-12">
@@ -25,16 +18,16 @@ export default function Table() {
                                 <div className="col-md-9 col-12">
                                     <ul className="d-flex justify-content-between coin-list">
                                         <li className="mx-2">
-                                            <Image src={bigbossicon} alt="" className="first-child-img"/>
+                                            <img src="bigboss-icon.png" alt="" className="first-child-img"/>
                                         </li>
                                         <li className="mx-2">
-                                            <Image src={dogeicon} alt="" />
+                                            <img src="dogeicon.png" alt="" />
                                         </li>
                                         <li className="mx-2">
-                                            <Image src={shibaicon} alt="" />
+                                            <img src="shibainu.png" alt="" />
                                         </li>
                                         <li className="mx-2">
-                                            <Image src={pepeicon} alt="" />
+                                            <img src="pepeicon.png" alt="" />
                                         </li>
                                     </ul>
                                 </div>
@@ -48,36 +41,36 @@ export default function Table() {
                                 <div className="col-md-9 col-sm-12">
                                     <div className="row align-items-center justify-content-between px-md-0 px-4 pe-md-4">
                                         <div className="col-2 text-center py-2 px-0">
-                                            <Image src={sparkleicon} alt="" className="star" />
-                                            <Image src={sparkleicon} alt="" className="star" />
-                                            <Image src={sparkleicon} alt="" className="star" />
-                                            <Image src={sparkleicon} alt="" className="star" />
-                                            <Image src={sparkleicon} alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
                                             <div className='table-span'>
                                                 <span>Top-tier humor, Bosspersona </span>
                                             </div>
                                         </div>
                                         <div className="col-2 text-center py-2 px-0">
-                                            <Image src={sparkleicon} alt="" />
-                                            <Image src={sparkleicon} alt="" />
+                                            <img src="sparkle.png" alt="" />
+                                            <img src="sparkle.png" alt="" />
                                             <div className='table-span'>
                                                 <span>Original<br /> Meme</span>
                                             </div>
                                         </div>
                                         <div className="col-2 text-center py-2 px-0">
-                                            <Image src={sparkleicon} alt="" />
-                                            <Image src={sparkleicon} alt="" />
-                                            <Image src={sparkleicon} alt="" />
+                                            <img src="sparkle.png" alt="" />
+                                            <img src="sparkle.png" alt="" />
+                                            <img src="sparkle.png" alt="" />
                                             <div className='table-span'>
                                                 <span>Strong Shiba<br /> theme</span>
                                             </div>
                                         </div>
                                         <div className="col-2 text-center py-2 px-0">
-                                            <Image src={sparkleicon} alt="" />
-                                            <Image src={sparkleicon} alt="" />
-                                            <Image src={sparkleicon} alt="" />
-                                            <Image src={sparkleicon} alt="" />
-                                            <Image src={sparkleicon} alt="" />
+                                            <img src="sparkle.png" alt="" />
+                                            <img src="sparkle.png" alt="" />
+                                            <img src="sparkle.png" alt="" />
+                                            <img src="sparkle.png" alt="" />
+                                            <img src="sparkle.png" alt="" />
                                             <div className='table-span'>
                                                 <span>Pepe's<br /> Legacy</span>
                                             </div>
@@ -94,31 +87,31 @@ export default function Table() {
                                 <div className="col-md-9 col-sm-12">
                                     <div className="row align-items-center justify-content-between px-md-0 px-4">
                                         <div className="col-2 text-center py-2 px-0">
-                                            <Image src={sparkleicon} alt="" className="star" />
-                                            <Image src={sparkleicon} alt="" className="star" />
-                                            <Image src={sparkleicon} alt="" className="star" />
-                                            <Image src={sparkleicon} alt="" className="star" />
-                                            <Image src={sparkleicon} alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
                                             <div className='table-span'>
                                                 <span>Extensive with<br /> staking & voting</span>
                                             </div>
                                         </div>
                                         <div className="col-2 text-center py-2 px-0">
-                                            <Image src={sparkleicon} alt="" />
+                                            <img src="sparkle.png" alt="" />
                                             <div className='table-span'>
                                                 <span>Simple<br /> currency</span>
                                             </div>
                                         </div>
                                         <div className="col-2 text-center py-2 px-0">
-                                            <Image src={sparkleicon} alt="" />
-                                            <Image src={sparkleicon} alt="" />
-                                            <Image src={sparkleicon} alt="" />
+                                            <img src="sparkle.png" alt="" />
+                                            <img src="sparkle.png" alt="" />
+                                            <img src="sparkle.png" alt="" />
                                             <div className='table-span'>
                                                 <span>Utility in<br /> use cases</span>
                                             </div>
                                         </div>
                                         <div className="col-2 text-center py-2 px-0">
-                                            <Image src={sparkleicon} alt="" />
+                                            <img src="sparkle.png" alt="" />
                                             <div className='table-span'>
                                                 <span>Limited<br /> use cases</span>
                                             </div>
@@ -135,32 +128,32 @@ export default function Table() {
                                 <div className="col-md-9 col-sm-12">
                                     <div className="row align-items-center justify-content-between px-md-0 px-4">
                                         <div className="col-2 text-center py-2 px-0">
-                                            <Image src={sparkleicon} alt="" className="star" />
-                                            <Image src={sparkleicon} alt="" className="star" />
-                                            <Image src={sparkleicon} alt="" className="star" />
-                                            <Image src={sparkleicon} alt="" className="star" />
-                                            <Image src={sparkleicon} alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
                                             <div className='table-span'>
                                                 <span>Massive APY for holders!</span>
                                             </div>
                                         </div>
                                         <div className="col-2 text-center py-2 px-0">
-                                            <Image src={crossicon} alt="" className="cross" />
+                                            <img src="cross.png" alt="" className="cross" />
                                             <div className='table-span'>
                                                 <span>None</span>
                                             </div>
                                         </div>
                                         <div className="col-2 text-center py-2 px-0">
-                                            <Image src={sparkleicon} alt="" />
-                                            <Image src={sparkleicon} alt="" />
-                                            <Image src={sparkleicon} alt="" />
+                                            <img src="sparkle.png" alt="" />
+                                            <img src="sparkle.png" alt="" />
+                                            <img src="sparkle.png" alt="" />
                                             <div className='table-span'>
                                                 <span>Moderate<br /> staking</span>
                                             </div>
                                         </div>
                                         <div className="col-2 text-center py-2 px-0">
-                                            <Image src={sparkleicon} alt="" />
-                                            <Image src={sparkleicon} alt="" />
+                                            <img src="sparkle.png" alt="" />
+                                            <img src="sparkle.png" alt="" />
                                             <div className='table-span'>
                                                 <span>Basic<br /> rewards</span>
                                             </div>
@@ -177,32 +170,32 @@ export default function Table() {
                                 <div className="col-md-9 col-sm-12">
                                     <div className="row align-items-center justify-content-between px-md-0 px-4">
                                         <div className="col-2 text-center py-2 px-0">
-                                            <Image src={sparkleicon} alt="" className="star" />
-                                            <Image src={sparkleicon} alt="" className="star" />
-                                            <Image src={sparkleicon} alt="" className="star" />
-                                            <Image src={sparkleicon} alt="" className="star" />
-                                            <Image src={sparkleicon} alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
                                             <div className='table-span'>
                                                 <span>Partnerships & real-world use</span>
                                             </div>
                                         </div>
                                         <div className="col-2 text-center py-2 px-0">
-                                            <Image src={sparkleicon} alt="" />
+                                            <img src="sparkle.png" alt="" />
                                             <div className='table-span'>
                                                 <span>Minimal<br /> partnerships</span>
                                             </div>
                                         </div>
                                         <div className="col-2 text-center py-2 px-0">
-                                            <Image src={sparkleicon} alt="" />
-                                            <Image src={sparkleicon} alt="" />
-                                            <Image src={sparkleicon} alt="" />
+                                            <img src="sparkle.png" alt="" />
+                                            <img src="sparkle.png" alt="" />
+                                            <img src="sparkle.png" alt="" />
                                             <div className='table-span'>
                                                 <span>Merchandise<br /> sales</span>
                                             </div>
                                         </div>
                                         <div className="col-2 text-center py-2 px-0">
-                                            <Image src={sparkleicon} alt="" />
-                                            <Image src={sparkleicon} alt="" />
+                                            <img src="sparkle.png" alt="" />
+                                            <img src="sparkle.png" alt="" />
                                             <div className='table-span'>
                                                 <span>Limited<br /> options</span>
                                             </div>
@@ -219,32 +212,32 @@ export default function Table() {
                                 <div className="col-md-9 col-sm-12">
                                     <div className="row align-items-center justify-content-between px-md-0 px-4">
                                         <div className="col-2 text-center py-2 px-0">
-                                            <Image src={sparkleicon} alt="" className="star" />
-                                            <Image src={sparkleicon} alt="" className="star" />
-                                            <Image src={sparkleicon} alt="" className="star" />
-                                            <Image src={sparkleicon} alt="" className="star" />
-                                            <Image src={sparkleicon} alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
                                             <div className='table-span'>
                                                 <span>Governance with every vote</span>
                                             </div>
                                         </div>
                                         <div className="col-2 text-center py-2 px-0">
-                                            <Image src={crossicon} alt="" className="" />
+                                            <img src="cross.png" alt="" className="" />
                                             <div className='table-span'>
                                                 <span>No voting<br /> mechanism</span>
                                             </div>
                                         </div>
                                         <div className="col-2 text-center py-2 px-0">
-                                            <Image src={sparkleicon} alt="" />
-                                            <Image src={sparkleicon} alt="" />
-                                            <Image src={sparkleicon} alt="" />
+                                            <img src="sparkle.png" alt="" />
+                                            <img src="sparkle.png" alt="" />
+                                            <img src="sparkle.png" alt="" />
                                             <div className='table-span'>
                                                 <span>Community-driven</span>
                                             </div>
                                         </div>
                                         <div className="col-2 text-center py-2 px-0">
-                                            <Image src={sparkleicon} alt="" />
-                                            <Image src={sparkleicon} alt="" />
+                                            <img src="sparkle.png" alt="" />
+                                            <img src="sparkle.png" alt="" />
                                             <div className='table-span'>
                                                 <span>Basic <br />governance</span>
                                             </div>
@@ -261,32 +254,32 @@ export default function Table() {
                                 <div className="col-md-9 col-sm-12">
                                     <div className="row align-items-center justify-content-between px-md-0 px-4">
                                         <div className="col-2 text-center py-2 px-0">
-                                            <Image src={sparkleicon} alt="" className="star" />
-                                            <Image src={sparkleicon} alt="" className="star" />
-                                            <Image src={sparkleicon} alt="" className="star" />
-                                            <Image src={sparkleicon} alt="" className="star" />
-                                            <Image src={sparkleicon} alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
+                                            <img src="sparkle.png" alt="" className="star" />
                                             <div className='table-span'>
                                                 <span>Anti-dump mechanisms, security </span>
                                             </div>
                                         </div>
                                         <div className="col-2 text-center py-2 px-0">
-                                            <Image src={crossicon} alt="" className="" />
+                                            <img src="cross.png" alt="" className="" />
                                             <div className='table-span'>
                                                 <span>None</span>
                                             </div>
                                         </div>
                                         <div className="col-2 text-center py-2 px-0">
-                                            <Image src={sparkleicon} alt="" />
-                                            <Image src={sparkleicon} alt="" />
-                                            <Image src={sparkleicon} alt="" />
+                                            <img src="sparkle.png" alt="" />
+                                            <img src="sparkle.png" alt="" />
+                                            <img src="sparkle.png" alt="" />
                                             <div className='table-span'>
                                                 <span>Lockup <br/>periods</span>
                                             </div>
                                         </div>
                                         <div className="col-2 text-center py-2 px-0">
-                                            <Image src={sparkleicon} alt="" />
-                                            <Image src={sparkleicon} alt="" />
+                                            <img src="sparkle.png" alt="" />
+                                            <img src="sparkle.png" alt="" />
                                             <div className='table-span'>
                                                 <span>Weak vesting<br/> model</span>
                                             </div>

@@ -7,7 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Image from 'next/image';
 import logoimg from '../../public/logo.png';
-import { UnlockButton } from './UnlockButton';
+import { UnlockButton } from '../web3/components/Wallet/UnlockButtonBS';
 import { useAccount } from 'wagmi';
 import { useFetchPublicData, useFetchUserData } from '@/web3/state';
 import { PresaleJohan } from '@/web3/state/types';
@@ -33,13 +33,9 @@ export default function Header() {
   }, []);
 
   
-  const account = useAccount().address?.toString()
-
-  
+  const account = useAccount().address?.toString()  
   useFetchPublicData(account, "presaleJohan")
   const presaleJohan = useFetchUserData<PresaleJohan>(account, "presaleJohan")
-  console.log("HEADER")
-  console.log(presaleJohan)
 
   return (
     <>
@@ -47,7 +43,7 @@ export default function Header() {
         <Navbar expand="lg">
           <Container>
             <Navbar.Brand href="/home" className='d-lg-none d-block'>
-              <Image src={logoimg} alt="Logo" />
+              <img src="logo.png" alt="" />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">

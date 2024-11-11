@@ -5,17 +5,6 @@ const tokens = {
     symbol: 'BNB',
     projectLink: 'https://www.binance.com/',
   },
-  bitgold: {
-    symbol: 'Bitgold',
-    address: {
-       1: `0x${'2b1E1E8e1D821564016bBC4383D1159cd37b06A4'}`,  // Bitgold
-       5: `0x${'9A3e54652cc2879b52305aB4FB4fCfdB415A691d'}`,  // Bitgold
-      56: `0x${'E0B58022487131eC9913C1F3AcFD8F74FC6A6C7E'}`,  // GOLD NUGGET
-      97: `0x${'7B3b8D203b0F5671caa031a41858eC39a08921E3'}`,  // Bitgold
-    } as Address,
-    decimals: 18,
-    projectLink: 'https://wildlands.me',
-  },
   weth: {
     symbol: 'WETH',
     address: {
@@ -92,18 +81,7 @@ const tokens = {
     } as Address,
     decimals: 18,
     projectLink: 'https://www.paxos.com/busd/',
-  },
-  test: {
-    symbol: 'TEST_V2_Token',
-    address: {
-      1: `0x${'4Fabb145d64652a948d7253323f6E7A623C7C53'}`,
-      5: `0x${'95504279b1777167722c511e9258eeA3F34900B1'}`,
-      56: `0x${''}`,
-      97: `0x${''}`,
-    }  as Address,
-    decimals: 18,
-    projectLink: `0x${''}`,
-  },
+  }
 }
 
 export default tokens

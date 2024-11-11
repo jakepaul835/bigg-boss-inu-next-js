@@ -46,7 +46,7 @@ const fetchPresaleJohanData = async () => {
     return {
       cost: _stages[index][0].toString(), // Extract the ID from the args array
       amount: _stages[index][1].toString(),
-      max: (_stages[index][1]*2n).toString(),
+      max: (_stages[index][1]).toString(),
     };
   });
 
@@ -55,8 +55,8 @@ const fetchPresaleJohanData = async () => {
     console.log(stages)
     console.log(stages[Number(stageIterator)])
     console.log(Number(stageIterator))
-    stageProgress = new BigNumber(stages[stageIterator].amount.toString()).dividedBy(
-    new BigNumber(stages[stageIterator].max.toString()))
+    var sold = new BigNumber(stages[stageIterator].max).minus(new BigNumber(stages[stageIterator].amount))
+    stageProgress = sold.dividedBy(new BigNumber(stages[stageIterator].max))
   }
   else {
     console.log("NO !")
@@ -69,11 +69,11 @@ const fetchPresaleJohanData = async () => {
   const tokensPerDollar = Math.round(new BigNumber(1).dividedBy(tokenPrice).toNumber())
   const totalTokenSold = new BigNumber(totelTokensSold?.toString() ?? '0')
   const totalSoldinUSD = new BigNumber(totalSoldInUSD?.toString() ?? '0').dividedBy(usdPrecision)
-  const tokensPerEth = ethPrice.multipliedBy(tokensPerDollar)
+  const tokensPerEth = Math.round(ethPrice.multipliedBy(tokensPerDollar).toNumber())
 
   return {
     stageIterator: new BigNumber(stageIterator?.toString() ?? '0').toJSON(),
-    totelTokensSold: totalTokenSold.toNumber(),
+    totalTokenSold: totalTokenSold.toNumber(),
     totalSoldInUSD: Math.round(totalSoldinUSD.toNumber()),
     paused,
     // stages: stages,
@@ -82,7 +82,7 @@ const fetchPresaleJohanData = async () => {
     ethPrice: ethPrice.toNumber(),
     tokenPrice: tokenPrice.toNumber(),
     tokensPerDollar: tokensPerDollar,
-    tokensPerEth: tokensPerEth.toNumber()
+    tokensPerEth: tokensPerEth
   }
 
 }

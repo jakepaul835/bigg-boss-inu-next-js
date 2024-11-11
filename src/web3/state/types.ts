@@ -20,7 +20,7 @@ export interface Block {
 
 export interface PresaleJohan {
   stageIterator : number,
-  totelTokensSold?: number,
+  totalTokenSold?: number,
   totalSoldInUSD?: number,
   paused: boolean,
   stageCurrent?: {
@@ -40,6 +40,8 @@ export interface PresaleJohan {
   } */
   userData?: {
     balance: BigNumber
+    usdcAllowance: BigNumber,
+    usdtAllowance: BigNumber
   }
 }
 
