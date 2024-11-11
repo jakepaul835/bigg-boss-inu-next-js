@@ -25,7 +25,7 @@ export const fetchContractData = async <T extends any[]>(contractsData: Contract
     });
 
     // Map through the results and return them as the expected tuple of types
-    const processedResults = results.map((result, index) => {
+    const processedResults = results.map((result) => {
       if (result.status === 'success') {
         return result.result as T[number]; // Return the result as the corresponding type in the tuple
       } else if (result.status === 'failure') {
