@@ -1094,12 +1094,13 @@
     padding: 2px;
     margin-top: 15px;
   }
-  .banner-calc-btn a.btn {
+  .banner-calc-btn button.btn {
     background: #1C009A;
     border-radius: 50px;
     font-size: 25px;
     font-weight: 900;
     padding: 10px 0;
+    width: 100%;
   }
   .buy-bigboss .progress-bar {
     width: 76%;
@@ -1410,9 +1411,12 @@
     .bigboss-presale h2 {
       font-size: 22px;
   }
-  .banner-calc-btn a.btn {
+  .banner-calc-btn button.btn {
     font-size: 18px;
+    width: 100%;
+    
   }
+
     .chosen-onebox ul li img.first-child-img {
       max-width: 100px;
     }
@@ -1622,9 +1626,10 @@
     }
   }
   @media (max-width: 767px) {
-    .banner-calc-btn a.btn {
+    .banner-calc-btn button.btn {
       font-size: 18px;
       padding: 6px 0;
+      width: 100%;
   }
     .chosen-onebox ul li img.first-child-img {
       max-width: 75px;
@@ -1880,3 +1885,23 @@
     }
   }
   
+  .lh-1 input {
+    font-weight: 900;
+    font-size: 18px;
+  }
+
+  .lh-1 input::-webkit-outer-spin-button,
+  .lh-1 input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .lh-1 input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  .input1::placeholder {
+    color: #627ed9 !important; 
+  }
+  .input2::placeholder {
+    color: #e4851b !important; 
+  }

@@ -31,6 +31,7 @@ export interface PresaleJohan {
   stageProgress: number,
   ethPrice: number,
   tokenPrice: number,
+  tokenPriceNext: number,
   tokensPerDollar: number,
   tokensPerEth: number
   /* stages?: {
