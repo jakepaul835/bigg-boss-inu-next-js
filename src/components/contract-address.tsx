@@ -3,7 +3,7 @@ import React from 'react';
 export default function ContactAddress() {
     return (
         <>
-            <section className="contact-address-section" id="contactaddress">
+            <section className="contact-address-section" id="tokenomics">
                 <div className="container">
                     <div className='row'>
                         <div className='col-lg-6 text-center mb-lg-0 mb-5'>

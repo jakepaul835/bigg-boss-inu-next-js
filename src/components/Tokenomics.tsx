@@ -3,7 +3,7 @@ import React from 'react'
 export default function Tokenomics() {
     return (
         <>
-            <section className="tokenomics-sec" id="tokenomics">
+            <section className="tokenomics-sec" id="tokenomicsUnused">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 mb-lg-0 mb-5">
