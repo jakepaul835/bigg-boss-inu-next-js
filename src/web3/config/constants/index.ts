@@ -1,1 +1,1 @@
-export { default as minesConfig } from './mines'
+export { default as tokens } from './tokens'

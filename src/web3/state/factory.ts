@@ -13,8 +13,8 @@ export interface GenericContractState<T> {
 
 // Type definitions for custom reducer and async thunk functions
 type CustomReducer<T> = (state: Draft<GenericContractState<T>>, action: PayloadAction<T>) => void;
-type CustomAsyncThunkFunction<T> = (dispatch: Dispatch, sliceActions: any) => Promise<void>;
-type CustomAsyncUserThunkFunction<T> = (account: string) => (dispatch: Dispatch, sliceActions: any) => Promise<void>;
+type CustomAsyncThunkFunction = (dispatch: Dispatch, sliceActions: any) => Promise<void>;
+type CustomAsyncUserThunkFunction = (account: string) => (dispatch: Dispatch, sliceActions: any) => Promise<void>;
 
 /**
  * Generate a a slice of reducers along with the corresponding actions. 
@@ -31,8 +31,8 @@ interface GenericSliceParams<T> {
     setUserData?: CustomReducer<T>;
   };
   customThunkFunctions?: {
-    fetchPublicDataAsync?: CustomAsyncThunkFunction<T>;
-    fetchUserDataAsync?: CustomAsyncUserThunkFunction<T>;
+    fetchPublicDataAsync?: CustomAsyncThunkFunction;
+    fetchUserDataAsync?: CustomAsyncUserThunkFunction;
   };
 }
 

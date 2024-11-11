@@ -6,8 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { UnlockButton } from '../web3/components/Wallet/UnlockButtonBS';
 import { useAccount } from 'wagmi';
-import { useFetchPublicData, useFetchUserData } from '@/web3/state';
-import { PresaleJohan } from '@/web3/state/types';
+import { useFetchPublicData } from '@/web3/state';
 
 export default function Header() {
   useEffect(() => {
@@ -32,7 +31,7 @@ export default function Header() {
   
   const account = useAccount().address?.toString()  
   useFetchPublicData(account, "presaleJohan")
-  const presaleJohan = useFetchUserData<PresaleJohan>(account, "presaleJohan")
+  // const presaleJohan = useFetchUserData<PresaleJohan>(account, "presaleJohan")
 
   return (
     <>

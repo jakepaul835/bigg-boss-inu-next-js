@@ -1,9 +1,9 @@
 "use client"
 
-import 'aos/dist/aos.css';
+// import 'aos/dist/aos.css';
 import { useEffect, useState } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+// import AOS from 'aos';
+// import 'aos/dist/aos.css';
 import axios from 'axios';
 // import { useAccount } from 'wagmi';
 // import { useFetchPublicData, useFetchUserData } from '@/web3/state';
@@ -32,7 +32,7 @@ import axios from 'axios';
 
 export default function Banner() {
     const [presaleData, setPresaleData] = useState<PresaleData | null>(null);
-    const [loading, setLoading] = useState(true);
+    // const [loading, setLoading] = useState(true);
    
     
     //const account = useAccount().address?.toString()  
@@ -41,7 +41,7 @@ export default function Banner() {
       
    
        useEffect(() => {
-           AOS.init({ duration: 1000 });
+           // AOS.init({ duration: 1000 });
    
            const fetchPresaleData = async () => {
                try {
@@ -52,7 +52,7 @@ export default function Banner() {
                } catch (error) {
                    console.error("Error fetching presale data:", error);
                } finally {
-                   setLoading(false);
+                   // setLoading(false);
                }
            };
    
@@ -106,7 +106,17 @@ export default function Banner() {
                                         <p className="amount-raised">Total Amount Raised :</p>
                                         <h3 className="amount-text text-start">{presaleData?.VESTINGBONUS}</h3>
                                         <div className="progress">
-                                            <div style={{ width: `${presaleData?.TEXTBOXVAL}%` }}  className="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{presaleData?.TEXTBOXVAL}%</div>
+                                        <div 
+                                            style={{ width: `${presaleData?.TEXTBOXVAL}%` }} 
+                                            className="progress-bar" 
+                                            role="progressbar" 
+                                            aria-valuenow={Number(presaleData?.TEXTBOXVAL) || 0}  // Convert to number or fallback to 0
+                                            aria-valuemin={0} 
+                                            aria-valuemax={100}
+                                            >
+                                            {presaleData?.TEXTBOXVAL}%
+                                        </div>
+
                                         </div>
                                         <div className="listing-price text-center">
                                             <p>{presaleData?.UPTO} : <span>{presaleData?.percentage}</span></p>

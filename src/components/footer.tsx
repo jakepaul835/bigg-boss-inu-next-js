@@ -1,8 +1,4 @@
 "use client"
-import footerlogo from '../../public/footer-logo.png';
-import twittericon from '../../public/twitter.png';
-import telegramicon from '../../public/telegram.png';
-import Image from 'next/image';
 
 export default function Footer() {
     return (

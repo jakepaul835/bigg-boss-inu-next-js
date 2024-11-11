@@ -2,13 +2,13 @@ import React from 'react'
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import Button from 'react-bootstrap/Button';
 
-export const UnlockButton = (props : any) => {
+export const UnlockButton = () => {
   return (
     <ConnectButton.Custom>
       {({
         account,
         chain,
-        openAccountModal,
+        // openAccountModal,
         openChainModal,
         openConnectModal,
         authenticationStatus,
@@ -37,14 +37,14 @@ export const UnlockButton = (props : any) => {
             {(() => {
               if (!connected) {
                 return (
-                  <Button variant="primary" onClick={openConnectModal} type="button" {...props}>
+                  <Button variant="primary" onClick={openConnectModal} type="button">
                     Connect Wallet
                   </Button>
                 );
               }
               if (chain.unsupported) {
                 return (
-                  <Button variant="primary" onClick={openChainModal} {...props}>
+                  <Button variant="primary" onClick={openChainModal}>
                     Wrong network
                   </Button>
                 );

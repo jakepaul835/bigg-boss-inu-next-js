@@ -2,7 +2,7 @@ import { useCallback, } from 'react'
 import { parseEther } from "viem";
 import { getPresaleJohanAddress } from "../utils/addressHelpers";
 import {abi as presaleABI} from '../config/abi/presaleJohan'
-import { useContractWrite } from '../utils/contractHelpers';
+import { handleContractWrite } from '../utils/contractHelpers';
 
 
 
@@ -24,7 +24,7 @@ export const useClaimTokens = () => {
 export const useDepositCoin = () => {
   const handle= useCallback(
     async (value = "0") => {
-      const txHash : `0x${string}` = await useContractWrite({
+      const txHash : `0x${string}` = await handleContractWrite({
         abi : presaleABI,
         address: getPresaleJohanAddress(),
         functionName: "depositCoin",
