@@ -269,7 +269,7 @@ export default function Banner() {
                                             </div>
                                         </div>
                                         <div className="banner-calc-btn mb-0">
-                                            <button disabled={Number(ethValue) < 0.00000001 || pending} onClick={handleButtonClick} className="btn btn-primary d-block">
+                                            <button disabled={Number(ethValue) < 0.00000001 || pending || Number(tokenAmount) < 1} onClick={handleButtonClick} className="btn btn-primary d-block">
                                                 BUY $BIG BOSS INU
                                             </button>
                                         </div>
