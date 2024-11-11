@@ -6,7 +6,6 @@ import {
   useConnectModal,
   useAccountModal,
 } from '@rainbow-me/rainbowkit';
-import styled from 'styled-components';
 import React from 'react';
 
 export const UnlockButton = ({

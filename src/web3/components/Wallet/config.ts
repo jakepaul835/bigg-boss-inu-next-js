@@ -14,9 +14,8 @@ import {
   trustWallet
 } from '@rainbow-me/rainbowkit/wallets';
 if (!walletconnectProjectId) throw new Error("Project ID is not defined");
-import { http, cookieStorage, createStorage, createConfig  } from "wagmi";
+import { http, createConfig  } from "wagmi";
 import { mainnet } from "wagmi/chains";
-import { injected, metaMask, safe, walletConnect } from 'wagmi/connectors'
 import { connectorsForWallets } from '@rainbow-me/rainbowkit';
 export const rpc = process.env.NEXT_PUBLIC_RPC_URL;
 

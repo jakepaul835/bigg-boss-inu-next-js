@@ -1,9 +1,9 @@
-import { useAccount, useDisconnect, useEnsAvatar, useEnsName } from 'wagmi'
+import { useAccount, useEnsAvatar, useEnsName } from 'wagmi'
 import React from 'react';
 
 export function Account() {
   const { address } = useAccount()
-  const { disconnect } = useDisconnect()
+  // const { disconnect } = useDisconnect()
   const { data: ensName } = useEnsName({ address })
   const { data: ensAvatar } = useEnsAvatar({ name: ensName! })
 

@@ -50,12 +50,12 @@ const fetchPresaleJohanData = async () => {
     };
   });
 
-  var stageProgress = new BigNumber(0)
+  let stageProgress = new BigNumber(0)
   if (stages.length > 0) {
     console.log(stages)
     console.log(stages[Number(stageIterator)])
     console.log(Number(stageIterator))
-    var sold = new BigNumber(stages[stageIterator].max).minus(new BigNumber(stages[stageIterator].amount))
+    const sold = new BigNumber(stages[stageIterator].max).minus(new BigNumber(stages[stageIterator].amount))
     stageProgress = sold.dividedBy(new BigNumber(stages[stageIterator].max))
   }
   else {

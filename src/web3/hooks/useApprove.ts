@@ -1,14 +1,12 @@
 import { useCallback, } from 'react'
-import { parseEther } from "viem";
-import { getPresaleJohanAddress } from "../utils/addressHelpers";
 import {abi as erc20ABI} from '../config/abi/erc20'
-import { useContractWrite } from '../utils/contractHelpers';
+import { handleContractWrite } from '../utils/contractHelpers';
 import { ethers } from 'ethers';
 
 export const useApprove = () => {
     const handle= useCallback(
       async (erc: `0x${string}`, spender : string) => {
-        const txHash : `0x${string}` = await useContractWrite({
+        const txHash : `0x${string}` = await handleContractWrite({
           abi : erc20ABI,
           address: erc,
           functionName: "approve",

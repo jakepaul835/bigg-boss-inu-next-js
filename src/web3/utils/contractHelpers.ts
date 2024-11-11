@@ -48,7 +48,7 @@ interface UseContractWriteParams {
   value?: bigint; // Optional value for payable functions
 }
 
-export const useContractWrite = async ({
+export const handleContractWrite = async ({
   address,
   abi,
   functionName,
