@@ -1,7 +1,6 @@
 import addresses from '../config/constants/contracts'
 import tokens from '../config/constants/tokens'
 import { Address } from '../config/constants/types'
-import { useChainId } from 'wagmi'
 
 export const getAddress = (address: Address, chainId : number = 1): `0x${string}` => {
   const mainNetChainId = 1

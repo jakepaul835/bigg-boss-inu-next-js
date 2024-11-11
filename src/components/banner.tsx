@@ -35,9 +35,9 @@ export default function Banner() {
     const [loading, setLoading] = useState(true);
    
     
-    const account = useAccount().address?.toString()  
-    useFetchPublicData(account, "presaleJohan")
-    const presaleJohan = useFetchUserData<PresaleJohan>(account, "presaleJohan")
+    //const account = useAccount().address?.toString()  
+    //useFetchPublicData(account, "presaleJohan")
+    //const presaleJohan = useFetchUserData<PresaleJohan>(account, "presaleJohan")
       
    
        useEffect(() => {

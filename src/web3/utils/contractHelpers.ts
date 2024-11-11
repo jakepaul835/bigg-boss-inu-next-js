@@ -1,8 +1,6 @@
 import { readContracts, writeContract } from "@wagmi/core";
 import { wagmiConfig } from '../components/Wallet' 
 import { Abi } from "viem";
-import { UseWriteContractParameters } from "wagmi";
-import { useCallback } from "react";
 
 type ContractCall = {
     address: `0x${string}`; // Address must be a hex string starting with 0x
