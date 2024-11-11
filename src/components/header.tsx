@@ -7,7 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Image from 'next/image';
 import logoimg from '../../public/logo.png';
-import { UnlockButton } from './UnlockButton';
+import { UnlockButton } from '../web3/components/Wallet/UnlockButtonBS';
 import { useAccount } from 'wagmi';
 import { useFetchPublicData, useFetchUserData } from '@/web3/state';
 import { PresaleJohan } from '@/web3/state/types';

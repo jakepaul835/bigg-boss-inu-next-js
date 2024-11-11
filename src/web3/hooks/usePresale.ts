@@ -1,11 +1,8 @@
-import { useCallback, useEffect, useState } from 'react'
-import { useAccount, UseWriteContractParameters } from 'wagmi'
-import { Abi, parseEther } from "viem";
+import { useCallback, } from 'react'
+import { parseEther } from "viem";
 import { getPresaleJohanAddress } from "../utils/addressHelpers";
 import {abi as presaleABI} from '../config/abi/presaleJohan'
-import { writeContract } from '@wagmi/core';
-import { wagmiConfig } from '../components/Wallet';
-import { createContractCall, fetchContractData, useContractWrite } from '../utils/contractHelpers';
+import { useContractWrite } from '../utils/contractHelpers';
 
 
 

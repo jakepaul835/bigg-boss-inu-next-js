@@ -40,6 +40,8 @@ export interface PresaleJohan {
   } */
   userData?: {
     balance: BigNumber
+    usdcAllowance: BigNumber,
+    usdtAllowance: BigNumber
   }
 }
 

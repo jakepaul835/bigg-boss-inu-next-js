@@ -962,6 +962,7 @@
     border-top: 5px solid #472610;
     border-bottom: 5px solid #472610;
     padding-bottom: 15px;
+    border-radius: 26px 26px 0px 0px;
   
   }
   .banner-calc-inner h3,
