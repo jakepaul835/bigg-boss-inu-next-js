@@ -952,17 +952,18 @@
     font-weight: 700;
     color: #472610;
     margin: 0;
-    padding: 10px 0px;
+    padding-top: 10px;
+    text-align: center;
   }
   .banner-calc-inner {
-    background: url(../../public/big-boss-presale-bg.png) no-repeat center;
+    background: url(../../public/big-boss-presale-bg.svg) no-repeat center;
     background-size: cover;
     padding-inline: 30px;
     padding-top: 20px;
-    border-top: 5px solid #472610;
-    border-bottom: 5px solid #472610;
+    border-top: 2px solid #472610;
+    border-bottom: 2px solid #472610;
     padding-bottom: 15px;
-    border-radius: 26px 26px 0px 0px;
+    /* border-radius: 26px 26px 0px 0px; */
   
   }
   .banner-calc-inner h3,
@@ -990,6 +991,7 @@
     margin-bottom: 10px;
     font-size: 52px;
     margin-top: 20px;
+    text-align: center !important;
   }
   .banner-calc-inner h3 span {
     color: #fff;
@@ -1071,6 +1073,9 @@
   }
   p.amount-raised {
     font-size: 20px;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
   }
   .listing-price p span {
     font-weight: 700;
@@ -1113,6 +1118,24 @@
     justify-content: center;
     align-items: center;
   }
+
+  .bigboss-presale .progress{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: .5rem;
+    height: 50px;
+    border-radius: 5rem;
+    padding: .2rem;
+    border: 2px solid #472610;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .progress .progress-bar{
+    background-color: var(--primary-color);
+    border-radius: inherit;
+  }
+  
   .banner-cacl-btn {
     margin-bottom: 30px;
   }
@@ -1883,6 +1906,16 @@
     .roadmap-datacard1, .roadmap-datacard2, .roadmap-datacard3, .roadmap-datacard4 {
       padding: 40px 50px 25px 65px;
     }
+  }
+
+  .lh-1{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  } 
+
+  .lh-1 p{
+    transform: translateX(12px);
   }
   
   .lh-1 input {

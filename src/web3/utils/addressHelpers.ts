@@ -18,3 +18,9 @@ export const getPresaleJohanAddress = () => {
 export const getEthPriceFeedAddress = () => {
   return getAddress(addresses.ethPriceFeed)
 }
+export const getUsdtAddress = () => {
+  return getAddress(tokens.usdt.address)
+}
+export const getUsdcAddress = () => {
+  return getAddress(tokens.usdc.address)
+}

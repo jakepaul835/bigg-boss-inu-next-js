@@ -1,0 +1,213 @@
+.connectbtn{
+    background-color: white;
+    color: #161616;
+    font-size: 20px;
+    font-weight: 600;
+    padding: .5rem 2rem;
+    border: 2px solid #472610;
+    border-radius: 2rem;
+    box-shadow: 3px 3px 0 5px #623416;
+    transition: all .3s ease-in-out;
+  }
+  
+  .connectbtn:hover{
+    border-color: dodgerblue;
+  }
+  
+  .btnwrapper {
+    background: linear-gradient(175.48deg, #E79F3B 20.95%, #E4851B 107.63%);
+    border: 2px solid #472610;
+    border-radius: 2rem;
+    box-shadow: 3px 3px 0 4px #623416;
+    transition: all .3s ease-in-out;
+  }
+
+  .btnwrapper:hover {
+    cursor: pointer;
+    background: linear-gradient(175.48deg, #E79F3B 40.95%, #E4851B 107.63%);
+    border-color: white;
+  }
+  
+  .accountD  {
+    display: flex;
+    align-items: center;
+    gap: 12;
+    padding: .5rem;
+  }
+  
+  .rightImg{
+    border-left: 2px solid white;
+    padding-left: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .rightImg img{
+    width: 40px;
+  }
+  
+  .disconnectBox .rightImg{
+    border-color: #623416;
+  }
+  
+  
+  .intext{
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0.5rem;
+  }
+  
+  .btnwrapperDis{
+    border-radius: 1.5rem 1.5rem 0 0;
+  }
+  
+  .disconnectBox{
+    border-top: 2px solid #623416;
+    padding: .5rem;
+    background-color: white;
+    border-radius: 0 0 1.5rem 1.5rem;
+    position: absolute;
+    width: 99%;
+    box-shadow: 2.5px 4px 0 5.5px #623416;
+    transition: all .5s ease-in-out;
+    opacity: 1;
+    pointer-events:auto;
+  }
+  
+  .hide{
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .disconnectBox .details h6 span:first-child{
+    color: #7E7167;
+    font-weight: 700;
+  }
+  .disconnectBox .details h6 span:last-child{
+    color: #472610;
+    font-size: 16px;
+    font-weight: 900;
+    margin-left: .3rem;
+  }
+  
+  .disconnectBox .details .d{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  
+  .disconnectBox .details h5{
+    font-size: 30px;
+    color: #E4851B;
+    font-weight: 900;
+    line-height: 1.3rem;
+  }
+  
+  .disconnectBox .details{
+    color: #161616;
+    margin-bottom: .3rem;
+  }
+  
+  .disconnectBox .intext{
+    border-right-color: #161616;
+  }
+  
+  .disconnectBox button{
+    color: white;
+    background-color:  #1C009A;
+    width: 100%;
+    border-radius: 3rem;
+    font-weight: 600;
+    padding: .3rem;
+    border: none;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+  }
+  
+  .disconnectBox button:hover{
+    opacity: .8;
+  }
+  
+  /* Container styling */
+  .dp-container {
+    position: relative;
+    width: 80px;
+    margin-left: .5rem;
+  }
+  
+  /* Button styling */
+  .dp-button {
+    width: 100%;
+    padding: 1px 10px;
+    background: #52B1C5;
+    color: #fff;
+    border: none;
+    border-radius: 2rem;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .dp-button span{
+    font-size: 20px;
+    transform: translateY(-.3rem);
+    color: white !important;
+  }
+  
+  /* Dropdown menu container */
+  .dp-menu {
+    position: absolute;
+    min-width: 80px ;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #F0911B;
+    border: 1px solid #ddd;
+    border-radius: 1rem;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    visibility: hidden;
+    z-index: 100;
+    overflow: hidden;
+  }
+  
+  /* Show the dp menu */
+  .dp-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+  
+  /* dp item styling */
+  .dp-item {
+    padding: .3rem 0 0 .5rem !important;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    color: white;
+  }
+  
+  .dp-item:nth-child(2){
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+  }
+  
+  .dp-item:hover {
+    background-color: #52B1C5;
+    color: #fff;
+  }
+  
+  .flex{
+    display: flex;
+    align-items: center;
+  }

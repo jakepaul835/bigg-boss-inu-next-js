@@ -65,7 +65,7 @@ export const handleContractWrite = async ({
     });
     return txHash;
   } catch {
-  console.log("ABBORTED")
+  // console.log("ABBORTED")
   return "0x0"
 }
 }

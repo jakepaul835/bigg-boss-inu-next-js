@@ -49,9 +49,9 @@ export default function Home() {
     <>
       <WalletContextProvider>
       <RefreshContextProvider>
-        <Provider store={store}>
+        <Provider store={store} >
           <Header />
-          <Banner/>      
+          <Banner/> 
           <LogoListing/>
           <Table/>      
           <About/>      

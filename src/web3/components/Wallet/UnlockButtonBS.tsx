@@ -1,14 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import Button from 'react-bootstrap/Button';
+import { useAccount, useDisconnect } from 'wagmi';
+import { useFetchUserData } from '@/web3/state';
+import { PresaleJohan } from '@/web3/state/types';
+
 
 export const UnlockButton = () => {
+  const { disconnect } = useDisconnect();
+  const [disconnectState, setDisconnectState] = useState(false);
+
+  
+  const account = useAccount().address?.toString();  
+  const presaleJohan = useFetchUserData<PresaleJohan>(account, "presaleJohan")
+
   return (
-    <ConnectButton.Custom>
+    <ConnectButton.Custom >
       {({
         account,
         chain,
-        // openAccountModal,
         openChainModal,
         openConnectModal,
         authenticationStatus,
@@ -37,9 +47,9 @@ export const UnlockButton = () => {
             {(() => {
               if (!connected) {
                 return (
-                  <Button variant="primary" onClick={openConnectModal} type="button">
+                  <button className='connectbtn' onClick={openConnectModal}>
                     Connect Wallet
-                  </Button>
+                  </button>
                 );
               }
               if (chain.unsupported) {
@@ -50,45 +60,46 @@ export const UnlockButton = () => {
                 );
               }
               return (
-                <div style={{ display: 'flex', gap: 12 }}>
-                  {/** <Button variant="primary"
-                    onClick={openChainModal}
-                    style={{ display: 'flex', alignItems: 'center' }}
-                  >
-                    {chain.hasIcon && (
-                      <div
-                        style={{
-                          background: chain.iconBackground,
-                          width: 12,
-                          height: 12,
-                          borderRadius: 999,
-                          overflow: 'hidden',
-                          marginRight: 4,
-                        }}
-                      >
-                        {chain.iconUrl && (
-                          <img
+                <div style={{ display: 'flex', alignItems: 'center' , position: 'relative' }}>
+                  <div  onClick={()=> disconnectState ? setDisconnectState(false) : setDisconnectState(true)} className={`btnwrapper ${disconnectState ? "btnwrapperDis" : ""}`}>
+                    <div className='accountD'>
+                      <img
+                        alt='profile'
+                        src={'profile.png'}
+                        style={{ borderRadius: 999 }}
+                        width={40}
+                        height={40}
+                      />
+                      <div className='intext'>{account.displayName}</div>
+                      {
+                        chain.iconUrl && (
+                          <div className='rightImg'><img 
                             alt={chain.name ?? 'Chain icon'}
                             src={chain.iconUrl}
-                            style={{ width: 12, height: 12 }}
-                          />
-                        )}
+                          /></div>
+                          
+                        )
+                      }
+                    </div>
+                     <div className={`disconnectBox ${disconnectState ? '' : 'hide'}`}>
+                      <div className='details'>
+                        <div className='d'>
+                          <h6><span>Balance</span><span>$BIGBOSSINU</span></h6>
+                          <h5>{presaleJohan?.userData ? presaleJohan.userData?.balance.toString() : "..."}</h5>
+                        </div>
+                        <div className='rightImg'>
+                          <img 
+                          alt={'bigbossinu'}
+                          src={'bigbossinu.svg'}
+                        />
+                        </div>
+                        
                       </div>
-                    )}
-                    {chain.name}
-                  </Button> 
-                  <Button variant="primary" onClick={openAccountModal} type="button" {...props}>
-                    {account.displayName}
-                     account.displayBalance
-                      ? ` (${account.displayBalance})`
-                      : '' *
-                  </Button>*/}
-                  <ConnectButton
-                    accountStatus={{
-                      smallScreen: 'avatar',
-                      largeScreen: 'full',
-                    }}
-                  />
+                      <button onClick={() => disconnect()} type="button">
+                        Disconnect Wallet
+                      </button>
+                    </div>
+                  </div >
                 </div>
               );
             })()}

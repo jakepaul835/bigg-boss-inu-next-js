@@ -9,6 +9,7 @@ import { useAccount } from 'wagmi';
 import { useFetchPublicData } from '@/web3/state';
 
 export default function Header() {
+
   useEffect(() => {
     // Function to add class on scroll
     const handleScroll = () => {
